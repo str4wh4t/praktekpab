@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// create route for user controller dengan middleware istoko
+Route::resource('user', 'App\Http\Controllers\UserController');
