@@ -248,11 +248,35 @@
               </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/user') }}">
+                <a class="nav-link" href="{{ route('user.index') }}">
                     <svg class="bi"><use xlink:href="#file-earmark-text"></use></svg>
                     {{ __('User') }}
                 </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('produk.index') }}">
+                  <svg class="bi"><use xlink:href="#file-earmark-text"></use></svg>
+                  {{ __('Produk') }}
+              </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('province.index') }}">
+                <svg class="bi"><use xlink:href="#file-earmark-text"></use></svg>
+                {{ __('Provinsi') }}
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('city.index') }}">
+              <svg class="bi"><use xlink:href="#file-earmark-text"></use></svg>
+              {{ __('Kota') }}
+          </a>
+      </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('alamat.index') }}">
+                <svg class="bi"><use xlink:href="#file-earmark-text"></use></svg>
+                {{ __('Alamat') }}
+            </a>
+        </li>
             <!-- -->
           </ul>
 
@@ -286,6 +310,15 @@
         </div>
         </div>
         @endif  
+        @if(session('status_message')) 
+        <div class="container"> 
+          <div class="mb-5 alert alert-{{ session('status_message')['type'] }}"> 
+            <div class="card-body"> 
+            {{ session('status_message')['text'] }} 
+            </div> 
+          </div> 
+        </div> 
+        @endif
         @yield('content')
       </div>
     </main>
